@@ -1,11 +1,11 @@
 # Observability table
 
 <!--
-TODO: run /review-pr 1 through /review-pr 5 with LangSmith tracing on, then
+TODO: run /review-pr 1 through /review-pr 5 with LangSmith or Langfuse tracing on, then
 fill in this table from the trace data and answer the PR-03 diagnostic.
 -->
 
-| Input | Total tokens | Most expensive span | `security-reviewer` called? |
+| Input | Total tokens | Most expensive span / step | `security-reviewer` called? |
 | --- | --- | --- | --- |
 | PR-01 (clean) | [PLACEHOLDER] | [PLACEHOLDER] | [PLACEHOLDER] |
 | PR-02 (style violations) | [PLACEHOLDER] | [PLACEHOLDER] | [PLACEHOLDER] |
