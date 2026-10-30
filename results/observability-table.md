@@ -1,8 +1,9 @@
 # Observability table
 
 <!--
-TODO: run /review-pr 1 through /review-pr 5 with LangSmith or Langfuse tracing on, then
-fill in this table from the trace data and answer the PR-03 diagnostic.
+TODO: run review-pr 1 through 5 (`/review-pr N` in Claude Code, `$review-pr N` in Codex) with
+LangSmith or Langfuse tracing on, then fill in this table from the trace data and answer the
+PR-03 diagnostic. Note which tool you used.
 -->
 
 | Input | Total tokens | Most expensive span / step | `security-reviewer` called? |

@@ -1,9 +1,7 @@
 <!--
-TODO: Test-code conventions knowledge skill.
-- Description (in .claude/skills/test-conventions/SKILL.md and
-  .agents/skills/test-conventions/SKILL.md): load only when reviewing test code (tests/,
-  test_*.py/*_test.py, or files that import pytest) — since app files are also .py, name a
-  concrete trigger.
+TODO: Test-code conventions knowledge skill. Shared by Codex and Claude Code; the native
+SKILL.md wrappers already load it only for test files (tests/, test_*.py/*_test.py, or files
+that import pytest).
 - Body: at least three rules covering naming, fixtures, and isolation. Tag severity.
 - Template: one compliant and one non-compliant test snippet.
 -->

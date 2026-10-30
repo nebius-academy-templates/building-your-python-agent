@@ -24,9 +24,11 @@ Native entry points are thin wrappers that point at the shared files:
 | Sub-agents | `.codex/agents/<name>.toml` | `.claude/agents/<name>.md` |
 | Run a review | `$review-pr 3` | `/review-pr 3` |
 
-Edit the shared files; touch a wrapper only to fill its `description` (the trigger) or
-tool-specific settings. Keep local configuration with credentials (`.codex/config.toml`,
-`.codex/langsmith.json`, `.claude/settings.local.json`, your GitHub MCP config) out of Git.
+The wrappers are complete: their descriptions, triggers, tools and models are already set,
+so both tools work on the same files at the same time. Every `[PLACEHOLDER]` you fill lives
+in exactly one place — `AGENTS.md`, `skills/*.md`, `reviewers/*.md` or `results/` — and
+neither tool needs a second copy. Local configuration with credentials (`.mcp.json`,
+`.codex/config.toml`, `.claude/settings.local.json`, …) is already in `.gitignore`.
 
 ## Files to complete in this task
 

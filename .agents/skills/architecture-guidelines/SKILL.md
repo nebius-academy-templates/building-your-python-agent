@@ -1,6 +1,6 @@
 ---
 name: architecture-guidelines
-description: "[PLACEHOLDER] — load when reviewing architecture (layered architecture, repository pattern, configuration, dependency injection)"
+description: "Team architecture for Python services: layered architecture, repository data access, configuration from the environment, constructor dependency injection. Load for architecture reviews."
 ---
 
 Read `skills/architecture-guidelines.md` relative to the repository root and follow it.

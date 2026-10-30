@@ -1,8 +1,22 @@
-# TODO: ensure your GitHub MCP configuration file (which holds your personal
-# access token) is listed here so it is never committed.
-[PLACEHOLDER]
+# Keep credentials and machine-specific settings out of Git. Native skills/agents,
+# shared prompts and redacted evidence remain tracked.
 
-# Local tool configuration (may hold API keys) — never commit.
-.codex/config.toml
-.codex/langsmith.json
+# GitHub MCP configuration (holds your personal access token)
+.mcp.json
+.vscode/mcp.json
+.cursor/mcp.json
+
+# Local Claude Code / Codex configuration — never ignore the whole .claude/ or .codex/ dir
 .claude/settings.local.json
+.claude/langsmith.json
+.codex/config.toml
+.codex/auth.json
+.codex/langsmith.json
+
+.env
+.env.*
+!.env.example
+.DS_Store
+__pycache__/
+*.pyc
+*.log

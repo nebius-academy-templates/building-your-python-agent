@@ -5,8 +5,8 @@ Steps: fetch the PR via GitHub MCP, apply app-conventions to non-test files, app
 test-conventions to test files, flag security issues, compile findings into the output
 format, present them, and ask for confirmation before posting. Post only on yes or post.
 TODO: update the steps to delegate to the three sub-agents and consolidate.
-Codex has no named-role selector: spawn a real child per reviewer and pass it the
-developer_instructions from the matching .codex/agents/<role>.toml explicitly.
+Write the steps tool-neutrally: the native wrappers in .claude/skills/review-pr and
+.agents/skills/review-pr already say how each tool starts the sub-agents.
 -->
 
 ## Steps
