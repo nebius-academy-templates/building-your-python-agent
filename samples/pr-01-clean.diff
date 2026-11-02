@@ -1,6 +1,6 @@
 diff --git a/src/ride_history_service.py b/src/ride_history_service.py
 new file mode 100644
-index 0000000..c2d4f88
+index 0000000..9033ab7
 --- /dev/null
 +++ b/src/ride_history_service.py
 @@ -0,0 +1,13 @@
@@ -17,12 +17,13 @@ index 0000000..c2d4f88
 +            return self._ride_repository.recent_rides()
 +        finally:
 +            self.is_loading = False
+\ No newline at end of file
 diff --git a/tests/test_ride_history_service.py b/tests/test_ride_history_service.py
 new file mode 100644
-index 0000000..f7a3b12
+index 0000000..9484e70
 --- /dev/null
 +++ b/tests/test_ride_history_service.py
-@@ -0,0 +1,11 @@
+@@ -0,0 +1,14 @@
 +from unittest.mock import Mock
 +
 +from src.ride_history_service import RideHistoryService
@@ -36,3 +37,5 @@ index 0000000..f7a3b12
 +    rides = service.load_rides()
 +
 +    assert rides == ["ride-1", "ride-2"]
++    assert service.is_loading is False
+\ No newline at end of file

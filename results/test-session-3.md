@@ -1,9 +1,7 @@
-# Test session 3
+# Practice 3 — actual session evidence
 
-<!--
-TODO: Paste the transcript showing selective skill loading (app-conventions on a PR that only
-touches application files, test-conventions on a PR reviewed for its test files) and the
-workflow run pausing before posting.
--->
+Tool/model/version and date: [PLACEHOLDER]
+Target, mode and head SHA when live: [PLACEHOLDER]
 
-[PLACEHOLDER]
+## Recorded conversation and tool events
+[PLACEHOLDER] — paste actual events and outputs, redacting credential values.
