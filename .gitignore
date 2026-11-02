@@ -22,3 +22,7 @@ langsmith-plugins.json
 results/*-injected.diff
 __pycache__/
 *.pyc
+
+# Langfuse local credentials; native agent/skill files remain tracked.
+.codex/langfuse.json
+.claude/settings.json

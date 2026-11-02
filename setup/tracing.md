@@ -1,5 +1,9 @@
 # Trace the reviewer, not the Python application
 
+Choose **LangSmith or Langfuse** for Practices 6/7. Both use the same evidence requirements below; one provider is sufficient. Record the provider and integration version in the observability table.
+
+## LangSmith
+
 Use a free LangSmith Developer personal account and an API key: no card is needed for
 up to 5,000 traces/month ([billing](https://docs.langchain.com/langsmith/billing)). Base
 traces are retained for 14 days ([pricing](https://www.langchain.com/pricing)); check
@@ -8,7 +12,7 @@ Save evidence promptly: the AI reviewer cannot open links and traces are not per
 Only enable tracing in the isolated course workspace: plugins upload conversation and
 tool-call content. Do not enable it in a private working conversation.
 
-## Codex CLI
+### Codex CLI (LangSmith)
 
 Requirements: **Codex CLI 0.153.4+**, **Node.js 22+ on Windows/Linux** (the macOS plugin includes its runtime), and enabled/trusted synchronous
 `UserPromptSubmit` hooks. Follow the [official integration](https://docs.langchain.com/langsmith/trace-with-codex)
@@ -34,7 +38,7 @@ In the shell that starts Codex, set `TRACE_TO_LANGSMITH=true`,
 For EU accounts set `LANGSMITH_CODEX_ENDPOINT=https://eu.api.smith.langchain.com`.
 The plugin also supports ignored `.codex/langsmith.json`; never commit API keys there.
 
-## Codex Desktop (optional)
+### Codex Desktop (LangSmith, optional)
 
 The CLI setup above is not proof that the desktop app loads the same plugin or hooks.
 Shell exports may not reach an already running desktop app. Check plugin availability,
@@ -66,7 +70,7 @@ or roles, open a new chat in the trusted project and verify discovery. Restart o
 when a changed setting or the installed plugin explicitly requires it; do not use
 restart as a substitute for checking hook trust and trace content.
 
-## Claude Code
+### Claude Code (LangSmith)
 
 Use the [official integration](https://docs.langchain.com/langsmith/trace-claude-code)
 with Node.js 20+ on Windows/Linux (the macOS plugin includes its runtime) and the plugin version you record in your results:
@@ -86,7 +90,36 @@ your `apiKey` and `projectName: "python-pr-review-agent"`. This overrides other 
 settings; keep the entire value local. Do not assume generic `LANGSMITH_ENDPOINT`
 controls this plugin. Use the installed plugin's documented redaction settings.
 
+## Langfuse
+
+Follow the official session-tracing integration for your tool:
+
+- [Codex integration](https://langfuse.com/integrations/developer-tools/codex): install the Langfuse tracing plugin, enable and trust its Stop hook, and follow its restart/verification steps.
+- [Claude Code integration](https://langfuse.com/integrations/developer-tools/claude-code): install the observability plugin or follow the documented hook setup and its dependencies.
+
+Create a Langfuse project and configure `TRACE_TO_LANGFUSE=true`,
+`LANGFUSE_PUBLIC_KEY`, `LANGFUSE_SECRET_KEY` and the region-appropriate
+`LANGFUSE_BASE_URL` through the integration's supported local configuration.
+Keep credentials in the launching environment or ignored local files. If following
+Claude's example `.claude/settings.json`, keep that credential-bearing file ignored;
+Codex's project `.codex/langfuse.json` is also ignored.
+
+Verify a completed PR-03 trace in Langfuse before the five final cases. Save the same
+reviewer invocation, input/output, HIGH-preservation and measured usage evidence as
+for LangSmith. A Langfuse MCP connection alone does not collect agent-session traces.
+Use a fresh isolated session; enable only the chosen tracing destination.
+The supplied recorded reference runs use LangSmith; they are not Langfuse runtime evidence.
+
 ## Redaction and reproducibility
+
+For either provider, verify that the installed integration masks credentials in outgoing
+inputs and outputs before uploading. Do not assume one provider's redaction variables
+work for the other. Use supported masking/filtering in the chosen integration.
+If it cannot mask the synthetic fixture literals, use explicitly labelled sanitized
+local copies for tracing and retain credential identifiers and the hardcoded-secret finding.
+Keep the original samples unchanged. A final-answer mask alone does not sanitize tool data.
+
+For the LangSmith plugins:
 
 Keep built-in secret redaction enabled. The synthetic fixture strings may not match
 its default patterns: add exact-value redaction for the credential literals in
@@ -97,7 +130,7 @@ objects. Use `[REDACTED]` as the replacement; escape regex metacharacters in lit
 values. Test sanitized outgoing data locally before uploading;
 redact tool inputs/outputs as well as final answers. Replace complete credential values
 with `[REDACTED]` while preserving the hardcoded-credential finding.
-Never claim local collection proves successful LangSmith cloud delivery.
+For either provider, local collection alone does not prove successful trace delivery.
 
 If you change shell environment variables, exit the running CLI and start it again
 from that shell so the new process inherits them; no computer reboot is needed.
@@ -111,8 +144,8 @@ subagents or fabricate trace identifiers.
 ## Evidence to save
 
 Fill `results/observability-table.md` with five rows: trace ID, total tokens, the most
-expensive span (name or ID and cost/token value), and whether security was called.
-Record tool/plugin/model versions and the counting method once above the table.
+expensive span or step (name or ID and cost/token value), and whether security was called.
+Record the provider, tool/integration/model versions and the counting method once above the table.
 
 For PR-03, save a short redacted excerpt showing the security invocation and relevant
 input, its returned finding, and the corresponding consolidated output. Explain whether
@@ -126,5 +159,5 @@ again. With Codex plugin 0.3.0, UI totals may undercount and wait/LLM events may
 usage: use unique request records or exclusive per-agent counters. For resumed chats,
 exclude earlier turns. Briefly state the method; copying the raw counters is optional.
 Use tokens if currency cost cannot be reconciled. Mark unavailable values `N/A: <reason>`
-and report the limitation rather than inventing measurements. Inspect child runs in
-LangSmith, but commit only the table and diagnostic excerpt needed for offline assessment.
+and report the limitation rather than inventing measurements. Inspect reviewer observations in
+the chosen provider, but commit only the table and diagnostic excerpt needed for offline assessment.

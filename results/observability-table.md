@@ -1,12 +1,15 @@
 # Observability table
 
+Run PR-01 through PR-05 with LangSmith or Langfuse tracing enabled.
+Provider: [PLACEHOLDER] — LangSmith or Langfuse.
+
 Tool version: [PLACEHOLDER]
-Plugin version: [PLACEHOLDER]
+Integration/plugin version: [PLACEHOLDER]
 Model: [PLACEHOLDER]
 Token method: [PLACEHOLDER] — briefly explain how totals count each model request once.
 Expense metric: [PLACEHOLDER] — measured cost, or tokens if cost is unavailable.
 
-| Input | Trace ID | Total tokens | Most expensive span | security-reviewer called? |
+| Input | Trace ID | Total tokens | Most expensive span / step | security-reviewer called? |
 | --- | --- | --- | --- | --- |
 | PR-01 | [PLACEHOLDER] | | | |
 | PR-02 | [PLACEHOLDER] | | | |
@@ -14,7 +17,7 @@ Expense metric: [PLACEHOLDER] — measured cost, or tokens if cost is unavailabl
 | PR-04 | [PLACEHOLDER] | | | |
 | PR-05 | [PLACEHOLDER] | | | |
 
-Identify the most expensive span by name or ID and its cost/token value. Record unavailable
+Identify the most expensive span or step by name or ID and its cost/token value. Record unavailable
 metrics as `N/A: <reason>`. No separate model, parent ID or usage dump per reviewer is needed.
 
 ## PR-03 diagnostic

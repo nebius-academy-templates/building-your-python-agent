@@ -9,7 +9,7 @@ steps and acceptance criteria. This repository supplies the working files, not a
 copy of the lesson. [Practice overview](practice-description.md) lists the seven stages.
 
 - [GitHub MCP setup](setup/github-mcp.md): the hosted server is the default; Docker is optional.
-- [LangSmith setup](setup/tracing.md): CLI, optional desktop and Claude Code configuration.
+- [Tracing setup](setup/tracing.md): LangSmith or Langfuse for Codex and Claude Code.
 - [Course PRs](https://github.com/nebius-academy-templates/python-pr-review-practice): five
   independent review inputs, with matching local diffs in `samples/`.
 - [Fixture policy](fixture-policy.md): keep the teaching inputs unchanged and redact credentials.
