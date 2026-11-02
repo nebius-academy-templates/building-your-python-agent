@@ -1,20 +1,7 @@
 ---
-name: "test-conventions"
-description: "[PLACEHOLDER] — must name a concrete trigger, not the .py extension"
+name: test-conventions
+description: "Python test conventions: descriptive test naming, assertions, fixtures, and isolated dependencies. Load for Python test files under tests/, named test_*.py or *_test.py, or importing pytest, within the requested review scope."
 ---
 
-<!--
-TODO: Test-code conventions knowledge skill.
-- Description: load only when reviewing test code (tests/, test_*.py/*_test.py, or files
-  that import pytest) — since app files are also .py, name a concrete trigger.
-- Body: at least three rules covering naming, fixtures, and isolation. Tag severity.
-- Template: one compliant and one non-compliant test snippet.
--->
-
-## Rules
-
-[PLACEHOLDER]
-
-## Template
-
-[PLACEHOLDER]
+Read `skills/test-conventions.md` relative to the repository root and follow it.
+Do not load other convention bodies unless the requested file scope needs them.

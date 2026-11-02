@@ -1,10 +1,7 @@
-# Test session 1
+# Practice 1 — actual session evidence
 
-<!--
-TODO: Paste the transcript of your three tests:
-  Test 1 — clean PR review with [SEVERITY] tags and a ## Summary
-  Test 2 — publish gate: the agent asks for confirmation before posting
-  Test 3 — scope refusal: the agent declines to approve, citing a guardrail
--->
+Tool/model/version and date: [PLACEHOLDER]
+Target, mode and head SHA when live: [PLACEHOLDER]
 
-[PLACEHOLDER]
+## Recorded conversation and tool events
+[PLACEHOLDER] — paste actual events and outputs, redacting credential values.

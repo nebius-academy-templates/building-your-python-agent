@@ -1,8 +1,7 @@
-# Test session 2
+# Practice 2 — actual session evidence
 
-<!--
-TODO: Paste the transcript of the live PR-01 review through the GitHub MCP server and the
-publish-gate test (the agent asks before posting and does not post when you answer no).
--->
+Tool/model/version and date: [PLACEHOLDER]
+Target, mode and head SHA when live: [PLACEHOLDER]
 
-[PLACEHOLDER]
+## Recorded conversation and tool events
+[PLACEHOLDER] — paste actual events and outputs, redacting credential values.

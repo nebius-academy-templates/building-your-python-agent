@@ -1,34 +1,16 @@
-diff --git a/src/notifications_manager.py b/src/notifications_manager.py
+diff --git a/src/profile_service.py b/src/profile_service.py
 new file mode 100644
-index 0000000..a4c8d73
+index 0000000..7ca03f0
 --- /dev/null
-+++ b/src/notifications_manager.py
-@@ -0,0 +1,29 @@
-+# manages all push notifications for the app
-+class notifications_manager:
++++ b/src/profile_service.py
+@@ -0,0 +1,9 @@
++class ProfileService:
++    # Boolean missing is/has/can prefix.
++    loading = False
 +
-+    Instance = None
-+
-+    Granted = False
-+    badge_count = 0
-+    pendingNotifications = []
-+
-+    def RequestPermission(self, completion):
-+        granted = ui_prompt_for_permission()
-+        self.Granted = granted
-+        completion(granted)
-+
-+    def ScheduleNotification(self, Title, Body, Date):
-+        content = {"title": Title, "body": Body, "badge": self.badge_count + 1}
-+        self.pendingNotifications.append(content)
-+        self.badge_count += 1
-+
-+    def CancelAll(self):
-+        self.pendingNotifications = []
-+        self.badge_count = 0
-+
-+    def GetPending(self, completion):
-+        completion(self.pendingNotifications)
-+
-+    def update_badge(self, count):
-+        self.badge_count = count
++    # Function name should be snake_case; missing type hints and docstring; mutable
++    # default argument.
++    def FetchProfile(self, user_id, tags=[]):
++        tags.append("fetched")
++        return Profile(user_id, tags)
+\ No newline at end of file
