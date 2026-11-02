@@ -1,7 +1,5 @@
-<!--
-TODO: architecture guidelines knowledge skill, preloaded by the
-architecture-reviewer sub-agent. Summarize the team's layered-architecture, repository-pattern,
-configuration, and dependency-injection rules so the reviewer can cite each guideline by name.
--->
+<!-- TODO: Summarize the four team ADRs in docs/adr/ so reviewers can cite each guideline by name. State the severity for repository bypass. -->
+
+## Rules
 
 [PLACEHOLDER]

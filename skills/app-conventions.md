@@ -1,9 +1,4 @@
-<!--
-TODO: Application-code conventions knowledge skill. Shared by Codex and Claude Code; the
-native SKILL.md wrappers already load it only for non-test .py files.
-- Body: at least three rules covering naming, type hints/docstrings, and error handling.
-- Template: one compliant and one non-compliant snippet.
--->
+<!-- TODO: Describe Python naming (PEP 8), type hints and docstrings, and error handling. Include one compliant and one non-compliant Python snippet. -->
 
 ## Rules
 

@@ -1,13 +1,4 @@
-<!--
-TODO: workflow skill that runs the full review on one command
-(`/review-pr <n>` in Claude Code, `$review-pr <n>` in Codex).
-Steps: fetch the PR via GitHub MCP, apply app-conventions to non-test files, apply
-test-conventions to test files, flag security issues, compile findings into the output
-format, present them, and ask for confirmation before posting. Post only on yes or post.
-TODO: update the steps to delegate to the three sub-agents and consolidate.
-Write the steps tool-neutrally: the native wrappers in .claude/skills/review-pr and
-.agents/skills/review-pr already say how each tool starts the sub-agents.
--->
+<!-- TODO: Fetch the PR via GitHub MCP, apply app-conventions to application files and test-conventions to test files, flag security issues, consolidate into the output format, and ask before posting; post only on yes/post. Add sequential real delegation to the three reviewers in Practice 4; when Codex has no named-role selector, pass the corresponding TOML developer_instructions to a real child explicitly. -->
 
 ## Steps
 

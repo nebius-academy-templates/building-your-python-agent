@@ -1,6 +1,6 @@
 ---
 name: architecture-guidelines
-description: "Team architecture for Python services: layered architecture, repository data access, configuration from the environment, constructor dependency injection. Load for architecture reviews."
+description: "Team architecture for Python services: layers, repository data access, configuration from the environment, and constructor injection. Load for architecture reviews."
 ---
 
 Read `skills/architecture-guidelines.md` relative to the repository root and follow it.

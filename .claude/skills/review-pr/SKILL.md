@@ -1,15 +1,21 @@
 ---
 name: review-pr
-description: "Run a complete Python PR review of a course PR. Explicit invocation only, with a case number from 1 to 5 (e.g. /review-pr 3)."
+description: "Run a complete Python PR review of a course PR. Explicit invocation only, via /review-pr <case number> (e.g. /review-pr 3)."
 disable-model-invocation: true
 ---
 
 Read `skills/review-pr.md` relative to the repository root and follow its steps in order.
-The shared workflow decides whether this practice uses sub-agents.
+The shared workflow determines whether this practice uses subagents.
 
-When the shared workflow calls for delegation, use the Agent tool with the named
-`style-reviewer`, `security-reviewer` and `architecture-reviewer` sub-agents. Run them one
-at a time and pass each the same target, scope and complete diff. If a named agent is
-unavailable, report it instead of simulating it.
+Before delegation is introduced (Practice 3), review in the main agent. Load
+`app-conventions` only for changed application `.py` files and `test-conventions`
+only for changed test files, respecting the requested scope.
+
+When the shared workflow calls for delegation (Practice 4 onward), use the Agent tool
+with the named `style-reviewer`, `security-reviewer`, and `architecture-reviewer`
+subagents. Run them one at a time and wait for each result before starting the next.
+Pass all three the same target, review scope and complete diff. Let the subagents read
+their shared reviewer prompts and convention files.
+If a named agent is unavailable, report the missing agent instead of simulating it.
 
 Case number supplied by Claude Code: $ARGUMENTS.

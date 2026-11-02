@@ -1,10 +1,4 @@
-<!--
-TODO: Test-code conventions knowledge skill. Shared by Codex and Claude Code; the native
-SKILL.md wrappers already load it only for test files (tests/, test_*.py/*_test.py, or files
-that import pytest).
-- Body: at least three rules covering naming, fixtures, and isolation. Tag severity.
-- Template: one compliant and one non-compliant test snippet.
--->
+<!-- TODO: Use the tests/, test_*.py / *_test.py trigger, test function naming, pytest fixtures, and isolated dependencies (no network, filesystem or shared state). Tag severity. Include good and bad pytest snippets. -->
 
 ## Rules
 
